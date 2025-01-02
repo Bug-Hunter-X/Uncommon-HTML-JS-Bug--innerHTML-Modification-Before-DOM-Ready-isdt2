@@ -1,0 +1,5 @@
+This repository demonstrates a subtle bug related to accessing and modifying HTML elements using JavaScript before the Document Object Model (DOM) is fully ready.  The bug is uncommon because it often depends on the timing of script execution and the structure of the HTML.
+
+The `bug.html` file shows the incorrect implementation that tries to change the `innerHTML` of a div element that hasn't been loaded yet by the browser's rendering engine. The `bugSolution.html` offers a corrected version using `setTimeout` to ensure the target element exists in the DOM before attempting modification.  This ensures that the operation happens after the element is parsed and rendered.
+
+This example highlights the importance of understanding how the browser handles DOM construction and script execution, helping developers avoid unexpected behavior in their web applications.
