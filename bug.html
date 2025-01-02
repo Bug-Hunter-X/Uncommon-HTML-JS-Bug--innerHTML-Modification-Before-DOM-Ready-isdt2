@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is visible.
+  </div>
+  <script>
+    // Incorrectly attempting to change the content of a div that doesn't exist yet
+    document.getElementById('nonExistentDiv').innerHTML = "This text won't show.";
+    // Correct way
+    setTimeout(function(){
+        document.getElementById('myDiv').innerHTML = 'This text will show after a delay';
+    },1000);
+  </script>
+</body>
+</html>
